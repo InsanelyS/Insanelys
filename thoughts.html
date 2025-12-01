@@ -9,7 +9,9 @@
     html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
     }
+
     body {
       background: #ffffff;
       color: #37352f;
@@ -18,111 +20,77 @@
       font-size: 16px;
     }
 
-    /* 顶部面包屑区域 */
-    .header {
-      padding: 24px 40px 0;
-      font-size: 14px;
+    /* 左上角 sos（替换原来的图标） */
+    .top-title {
+      position: fixed;
+      top: 16px;
+      left: 20px;
+      font-size: 28px;
+      font-weight: 500;
       color: #73726c;
+      z-index: 10;
     }
 
-    .breadcrumb {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    /* 与主页保持一致的整体位置 */
+    .center-container {
+      margin-top: 30vh;
+      padding-left: 20vw;
+      box-sizing: border-box;
     }
 
-    .breadcrumb-sep {
-      margin: 0 6px;
+    .content {
+      display: block;
     }
 
-    /* 中间主内容：整体居中，宽度较窄 */
-    .main {
-      max-width: 680px;
-      margin: 80px auto 120px; /* 距离顶部的大间距 */
-      text-align: center;
-    }
-
-    /* 顶部小图标（模拟 Notion 的 loading） */
-    .icon {
-      font-size: 26px;
-      margin-bottom: 24px;
-    }
-
-    /* 标题 Thoughts */
+    /* 标题大小 = 主页中间 sos 的大小 */
     .title {
-      font-size: 32px;
+      font-size: 40px;
       font-weight: 600;
-      margin: 0 0 32px;
-    }
-
-    /* 文本块容器：改为左对齐 */
-    .blocks {
+      margin: 0 0 24px 0;
       text-align: left;
     }
 
-    .block {
-      background-color: #f3f3f3;
-      padding: 8px 12px;
-      margin: 0 auto 10px;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    /* 让内容宽度不要太宽，更像截图 */
-    .block-inner {
-      max-width: 620px;
-      margin: 0 auto;
+    /* 文案块 */
+    .paragraph {
+      max-width: 640px;
+      background: #f3f3f1;
+      padding: 10px 14px;
+      margin: 0 0 1.2em 0;  /* 间距比原来大约 20% */
+      line-height: 1.7;
     }
 
     @media (max-width: 768px) {
-      .header {
-        padding: 16px 16px 0;
-      }
-      .main {
-        margin: 60px 16px 80px;
+      .center-container {
+        margin-top: 20vh;
+        padding-left: 24px;
       }
       .title {
-        font-size: 26px;
-      }
-      .block {
-        font-size: 14px;
+        font-size: 32px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- 顶部面包屑：可以把 sos 换成你想要的名字 -->
-  <header class="header">
-    <div class="breadcrumb">
-      <span>sos</span>
-      <span class="breadcrumb-sep>/</span>
-      <span>✴ Thoughts</span>
+  <div class="top-title">sos</div>
+
+  <div class="center-container">
+    <div class="content">
+
+      <h1 class="title">Thoughts</h1>
+
+      <!-- 第一段文案 -->
+      <p class="paragraph">
+        两个人可以相处很久也不知道该对方叫什么，名字只有第三个人出现时才有需要。
+      </p>
+
+      <!-- 第二段文案 -->
+      <p class="paragraph">
+        目前的生活状态一直在“沉淀”和“放空”之间徘徊，很奇怪也很矛盾，在这个时候哪怕怎么沉淀都赶不上重新知识增长的速度，好像怎么放空都得不到满足。
+      </p>
+
     </div>
-  </header>
-
-  <!-- 主内容区 -->
-  <main class="main">
-    <div class="icon">✴</div>
-    <h1 class="title">Thoughts</h1>
-
-    <div class="blocks">
-      <!-- 第一段 -->
-      <div class="block">
-        <div class="block-inner">
-          两个人可以相处很久也不知道该对方叫什么，名字只有第三个人出现时才有需要。
-        </div>
-      </div>
-
-      <!-- 第二段 -->
-      <div class="block">
-        <div class="block-inner">
-          目前的生活状态一直在“沉淀”和“放空”之间徘徊，很奇怪也很矛盾，在这个时代好像无论怎么沉淀都赶不上
-          重新知识增长的速度，好像怎么放空都得不到满足。
-        </div>
-      </div>
-    </div>
-  </main>
+  </div>
 
 </body>
 </html>
