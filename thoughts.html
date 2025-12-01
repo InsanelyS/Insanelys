@@ -31,31 +31,38 @@
       z-index: 10;
     }
 
-    /* ⭐ 关键调整：将内容整体上移（从 20vh → 12vh） */
+    /* ⭐ 内容整体位置：向上移动（从原来的 20vh → 12vh） */
     .center-container {
-      margin-top: 12vh;   /* ← 比之前更靠上，贴近你截图的箭头位置 */
+      margin-top: 12vh;
       padding-left: 20vw;
       box-sizing: border-box;
     }
 
+    /* ⭐ title 到第一段文案 = 与文案之间相同间距（2.5em） */
     .title {
       font-size: 40px;
       font-weight: 600;
-      margin: 0 0 24px 0;
+      margin: 0 0 2.5em 0;
       text-align: left;
     }
 
+    /* 文案模块 */
     .paragraph {
       max-width: 640px;
       background: #f3f3f1;
       padding: 10px 14px;
       line-height: 1.7;
-      margin: 0 0 2.5em 0;  /* 文案间距：2.5 倍 */
+      margin: 0 0 2.5em 0;  /* 文案之间间距：2.5 倍 */
+    }
+
+    /* 最后一个段落不需要额外间距 */
+    .paragraph:last-of-type {
+      margin-bottom: 0;
     }
 
     @media (max-width: 768px) {
       .center-container {
-        margin-top: 14vh; /* 移动端略微调高 */
+        margin-top: 14vh;
         padding-left: 24px;
       }
       .title {
