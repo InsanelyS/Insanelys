@@ -1,80 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <title>sos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bob's</title>
 
   <style>
-    body {
+    /* 页面基础 */
+    html, body {
       margin: 0;
-      padding: 40px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB",
-        "Microsoft YaHei", sans-serif;
+      padding: 0;
+    }
+    body {
       background: #ffffff;
-      color: #222;
+      color: #37352f;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+        "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
     }
 
-    /* 左上角标题 */
-    .top-left {
-      position: absolute;
-      top: 32px;
-      left: 32px;
+    /* 内容居中，左右有大留白，类似 Notion 页面宽度 */
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 96px 120px;
+    }
+
+    /* 顶部“面包屑”标题：sos */
+    .breadcrumb {
       font-size: 14px;
-      color: #555;
+      color: #73726c;
+      margin-bottom: 120px; /* 与主标题之间的竖直间距 */
     }
 
-    /* 整体居中区域 */
-    .center {
-      text-align: center;
-      margin-top: 80px;
-    }
-
-    .center h1 {
-      font-size: 32px;
+    /* 主标题 sos */
+    .title {
+      font-size: 40px;
       font-weight: 600;
-      margin-bottom: 24px;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 32px;
     }
 
-    /* 三个链接列表 */
+    /* 中央三行链接区域，整体居中，内部左对齐 */
     .links {
-      display: inline-block;
-      text-align: left;
-      font-size: 15px;
-      line-height: 2.2;
+      width: 260px;          /* 控制块宽，和原站类似的紧凑感 */
+      margin: 0 auto;        /* 让整个块水平居中 */
     }
 
-    .links a {
-      text-decoration: none;
-      color: #222;
+    .link-item {
       display: flex;
       align-items: center;
-      gap: 8px;
+      text-decoration: none;
+      color: #37352f;
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 4px 0;        /* 三行之间的小间距 */
     }
 
-    .icon {
-      font-size: 14px;
-      opacity: 0.8;
+    .link-item:hover {
+      text-decoration: underline;
+    }
+
+    .icon-wrapper {
+      width: 20px;
+      height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;    /* 图标与文字之间的距离 */
+    }
+
+    .icon-wrapper img {
+      display: block;
+      width: 18px;
+      height: 18px;
+    }
+
+    .link-text {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 24px 24px 80px;
+      }
+      .breadcrumb {
+        margin-bottom: 80px;
+      }
+      .title {
+        font-size: 32px;
+      }
+      .links {
+        width: auto;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="page">
+    <!-- 左上角小标题 -->
+    <div class="breadcrumb">sos</div>
 
-  <!-- 左上角文字 -->
-  <div class="top-left">Bob's</div>
+    <!-- 中间大标题 -->
+    <h1 class="title">sos</h1>
 
-  <!-- 中央内容 -->
-  <div class="center">
-    <h1>Bob’s</h1>
-
+    <!-- 三个链接：Thoughts / Music / Photos -->
     <div class="links">
-      <a href="/thoughts.html"><span class="icon">✨</span> Thoughts</a>
-      <a href="/music.html"><span class="icon">🎵</span> Music</a>
-      <a href="/photos.html"><span class="icon">📷</span> Photos</a>
-    </div>
-  </div>
-
-</body>
-</html>
-
+      <a class="link-item" href="/thoughts">
+        <span class="icon-wrapper">
+          <img src="https://www.notion.so/icons/burst_gray.svg?mode=light" alt="Thoughts" />
+        </
