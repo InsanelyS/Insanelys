@@ -17,11 +17,9 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
         "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
       font-size: 16px;
-      display: flex;
-      flex-direction: column;
     }
 
-    /* 左上角标题 ×2 大小 */
+    /* 左上角标题 */
     .top-title {
       position: fixed;
       top: 16px;
@@ -32,13 +30,10 @@
       z-index: 10;
     }
 
-    /* 内容整体垂直居中 */
+    /* 修改：垂直位置 = 距离顶部约 30% */
     .center-container {
-      flex: 1;
-      display: flex;
-      align-items: left;       /* 垂直居中 */
-      justify-content: flex-start;
-      padding-left: 20vw;        /* 左侧距离 = 20% 屏幕宽 */
+      margin-top: 30vh;         /* ⭐ 从上到下的 30% 位置开始 */
+      padding-left: 20vw;       /* ⭐ 左侧 20% 开始排版（保持不变） */
       box-sizing: border-box;
     }
 
@@ -46,20 +41,21 @@
       display: block;
     }
 
-    /* 主标题 "sos" */
+    /* 主标题 */
     .title {
       font-size: 40px;
       font-weight: 600;
       margin: 0 0 20px 0;
+      text-align: left;
     }
 
-    /* 链接区域放大 1.5× */
+    /* 链接区域 */
     .link-item {
       display: flex;
       align-items: center;
       text-decoration: none;
       color: #37352f;
-      font-size: 24px;       /* 16 * 1.5 */
+      font-size: 24px;    /* 1.5x 放大 */
       line-height: 1.8;
       margin: 8px 0;
     }
@@ -68,15 +64,15 @@
       text-decoration: underline;
     }
 
-    /* 图标大小放大，保持对齐 */
+    /* 图标大小 1.5x */
     .icon-wrapper {
-      width: 27px;   /* 18 * 1.5 */
+      width: 27px;
       height: 27px;
       margin-right: 12px;
-      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
 
     .icon-wrapper img {
@@ -87,6 +83,7 @@
 
     @media (max-width: 768px) {
       .center-container {
+        margin-top: 20vh;
         padding-left: 24px;
       }
       .title {
@@ -104,13 +101,11 @@
 </head>
 <body>
 
-  <!-- 固定左上角标题 -->
   <div class="top-title">sos</div>
 
-  <!-- 居中 + 左侧 20% 开始 -->
   <div class="center-container">
     <div class="content">
-      
+
       <h1 class="title">sos</h1>
 
       <a class="link-item" href="/thoughts">
