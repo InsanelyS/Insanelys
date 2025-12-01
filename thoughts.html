@@ -20,7 +20,7 @@
       font-size: 16px;
     }
 
-    /* 左上角 sos */
+    /* 左上角 sos（返回主页） */
     .top-title {
       position: fixed;
       top: 16px;
@@ -28,43 +28,43 @@
       font-size: 28px;
       font-weight: 500;
       color: #73726c;
+      text-decoration: none;
       z-index: 10;
     }
 
-    /* 内容整体上移 */
     .center-container {
       margin-top: 12vh;
       padding-left: 20vw;
       box-sizing: border-box;
     }
 
-    /* title 与第一段文案的间距 = 2.5em */
     .title {
       font-size: 40px;
       font-weight: 600;
-      margin: 0 0 1.5em 0;
+      margin: 0 0 2.5em 0;
       text-align: left;
     }
 
-    /* 文案容器（不带背景） */
-    .paragraph {
-      margin: 0 0 2.5em 0;
-      line-height: 1.7;
+    /* 文案与日期整体容器 */
+    .entry {
+      margin-bottom: 2.5em;  /* 与文案间距保持一致 */
     }
 
-    /* 灰色背景仅包裹文字 */
-    .paragraph span {
+    /* 文案背景只包文字 */
+    .entry .text {
       background: #f3f3f1;
-      padding: 10px 14px; /* 左右一致 */
-      display: inline-block; /* ✨ 背景只包文字，不会占满整行 */
+      padding: 10px 14px;
+      display: inline-block;
+      line-height: 1.7;
       border-radius: 3px;
     }
 
-        /* 日期样式（8px） */
-    .date {
+    /* 日期（放在文案下方） */
+    .entry .date {
       font-size: 8px;
       color: #37352f;
-      margin: 0 0 6px 0;  /* 日期与文案之间留一点距离 */
+      margin-top: 6px;
+      padding-left: 14px;   /* ⭐ 与文案文字左侧对齐（文案 padding-left = 14px） */
       display: block;
     }
 
@@ -85,14 +85,18 @@
 
   <div class="center-container">
     <h1 class="title">Thoughts</h1>
-    
-    <p class="paragraph">
-      <span>两个人可以相处很久也不知道该对方叫什么，名字只有第三个人出现时才有需要。</span>
-    </p>
 
-    <p class="paragraph">
-      <span>目前的生活状态一直在“沉淀”和“放空”之间徘徊，很奇怪也很矛盾，在这个时候哪怕怎么沉淀都赶不上重新知识增长的速度，好像怎么放空都得不到满足。</span>
-    </p>
+    <!-- 文案 1 -->
+    <div class="entry">
+      <span class="text">两个人可以相处很久也不知道该对方叫什么，名字只有第三个人出现时才有需要。</span>
+      <span class="date">2024-12-01</span>
+    </div>
+
+    <!-- 文案 2 -->
+    <div class="entry">
+      <span class="text">目前的生活状态一直在“沉淀”和“放空”之间徘徊，很奇怪也很矛盾，在这个时候哪怕怎么沉淀都赶不上重新知识增长的速度，好像怎么放空都得不到满足。</span>
+      <span class="date">2024-12-02</span>
+    </div>
 
   </div>
 
