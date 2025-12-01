@@ -19,114 +19,133 @@
       font-size: 16px;
     }
 
-    /* 内容居中，左右有大留白，类似 Notion 页面宽度 */
+    /* 左上角标题：放在页面最左上角，字号放大 2 倍 */
+    .top-title {
+      position: fixed;
+      top: 12px;
+      left: 16px;
+      font-size: 28px; /* 原来大约 14，现在 14 × 2 = 28 */
+      font-weight: 500;
+      color: #73726c;
+      z-index: 10;
+    }
+
+    /* 主体区域：限制最大宽度，整体在中间，但内容靠左 1/3 位置 */
     .page {
       max-width: 960px;
       margin: 0 auto;
-      padding: 32px 96px 120px;
+      padding: 80px 96px 120px; /* 顶部留一点空，避免压到顶部标题 */
     }
 
-    /* 顶部“面包屑”标题：sos */
-    .breadcrumb {
-      font-size: 14px;
-      color: #73726c;
-      margin-bottom: 120px; /* 与主标题之间的竖直间距 */
+    .content {
+      margin-top: 80px;
+      padding-left: 18%; /* 大致在整页左侧 1/3 的位置 */
     }
 
-    /* 主标题 sos */
+    /* 中部大标题 "sos" */
     .title {
       font-size: 40px;
       font-weight: 600;
       line-height: 1.2;
-      text-align: center;
-      margin: 0 0 32px;
+      text-align: left;
+      margin: 0 0 24px;
     }
 
-    /* 中央三行链接区域，整体居中，内部左对齐 */
+    /* 链接区域：左对齐 */
     .links {
-      width: 260px;          /* 控制块宽，和原站类似的紧凑感 */
-      margin: 0 auto;        /* 让整个块水平居中 */
+      display: block;
     }
 
+    /* 图标 + 文字：整体放大 1.5 倍 */
     .link-item {
       display: flex;
-      align-items: center;
+      align-items: center; /* 文字与图标垂直对齐 */
       text-decoration: none;
       color: #37352f;
-      font-size: 16px;
+      font-size: 24px;        /* 16 × 1.5 */
       line-height: 1.8;
-      margin: 4px 0;        /* 三行之间的小间距 */
+      margin: 6px 0;
     }
 
     .link-item:hover {
       text-decoration: underline;
     }
 
+    /* 图标尺寸也放大 1.5 倍，并保证文字与图标在同一行开始 */
     .icon-wrapper {
-      width: 20px;
-      height: 20px;
+      width: 27px;   /* 18 × 1.5 */
+      height: 27px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-right: 8px;    /* 图标与文字之间的距离 */
+      margin-right: 12px;
+      flex-shrink: 0;
     }
 
     .icon-wrapper img {
       display: block;
-      width: 18px;
-      height: 18px;
+      width: 100%;
+      height: 100%;
     }
 
     .link-text {
       white-space: nowrap;
     }
 
+    /* 移动端：收窄左边空白，让内容更靠左 */
     @media (max-width: 768px) {
       .page {
-        padding: 24px 24px 80px;
+        padding: 64px 24px 80px;
       }
-      .breadcrumb {
-        margin-bottom: 80px;
+      .content {
+        padding-left: 24px;
+        margin-top: 72px;
       }
       .title {
         font-size: 32px;
       }
-      .links {
-        width: auto;
+      .link-item {
+        font-size: 20px;
+      }
+      .icon-wrapper {
+        width: 24px;
+        height: 24px;
       }
     }
   </style>
 </head>
 <body>
+  <!-- 左上角标题 -->
+  <div class="top-title">sos</div>
+
   <div class="page">
-    <!-- 左上角小标题 -->
-    <div class="breadcrumb">sos</div>
+    <div class="content">
+      <!-- 中间（偏左）大标题 -->
+      <h1 class="title">sos</h1>
 
-    <!-- 中间大标题 -->
-    <h1 class="title">sos</h1>
+      <!-- 三个链接：Thoughts / Music / Photos -->
+      <div class="links">
+        <a class="link-item" href="/thoughts">
+          <span class="icon-wrapper">
+            <img src="https://www.notion.so/icons/burst_gray.svg?mode=light" alt="Thoughts" />
+          </span>
+          <span class="link-text">Thoughts</span>
+        </a>
 
-    <!-- 三个链接：Thoughts / Music / Photos -->
-    <div class="links">
-      <a class="link-item" href="/thoughts">
-        <span class="icon-wrapper">
-          <img src="https://www.notion.so/icons/burst_gray.svg?mode=light" alt="Thoughts" />
-        </span>
-        <span class="link-text">Thoughts</span>
-      </a>
+        <a class="link-item" href="/music">
+          <span class="icon-wrapper">
+            <img src="https://www.notion.so/icons/battery-charging_gray.svg?mode=light" alt="Music" />
+          </span>
+          <span class="link-text">Music</span>
+        </a>
 
-      <a class="link-item" href="/music">
-        <span class="icon-wrapper">
-          <img src="https://www.notion.so/icons/battery-charging_gray.svg?mode=light" alt="Music" />
-        </span>
-        <span class="link-text">Music</span>
-      </a>
-
-      <a class="link-item" href="/photos">
-        <span class="icon-wrapper">
-          <img src="https://www.notion.so/icons/hail_gray.svg?mode=light" alt="Photos" />
-        </span>
-        <span class="link-text">Photos</span>
-      </a>
+        <a class="link-item" href="/photos">
+          <span class="icon-wrapper">
+            <img src="https://www.notion.so/icons/hail_gray.svg?mode=light" alt="Photos" />
+          </span>
+          <span class="link-text">Photos</span>
+        </a>
+      </div>
     </div>
   </div>
 </body>
