@@ -1,149 +1,80 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>我的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bob's</title>
+
   <style>
-    /* 整体布局：全屏居中 */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
     body {
+      margin: 0;
+      padding: 40px;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB",
         "Microsoft YaHei", sans-serif;
-      background-color: #ffffff;
-      color: #111111;
-      min-height: 100vh;
+      background: #ffffff;
+      color: #222;
+    }
+
+    /* 左上角标题 */
+    .top-left {
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* 整体居中区域 */
+    .center {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .center h1 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    /* 三个链接列表 */
+    .links {
+      display: inline-block;
+      text-align: left;
+      font-size: 15px;
+      line-height: 2.2;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #222;
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 8px;
     }
 
-    .page {
-      width: 100%;
-      padding: 40px 20px;
-    }
-
-    .inner {
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    /* 顶部标题区域 */
-    .title {
-      margin-bottom: 32px;
-    }
-
-    .title h1 {
-      font-size: 40px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
-    }
-
-    .title .sub {
+    .icon {
       font-size: 14px;
-      color: #666666;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    /* 导航 */
-    .nav {
-      display: inline-flex;
-      gap: 24px;
-      margin-bottom: 40px;
-      font-size: 14px;
-    }
-
-    .nav a {
-      text-decoration: none;
-      color: #222222;
-      position: relative;
-      padding-bottom: 4px;
-    }
-
-    .nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background-color: #222222;
-      transition: width 0.2s ease;
-    }
-
-    .nav a:hover::after {
-      width: 100%;
-    }
-
-    /* 中间一小段介绍文案（可选） */
-    .intro {
-      font-size: 14px;
-      color: #555555;
-      line-height: 1.8;
-      max-width: 480px;
-      margin: 0 auto 40px;
-    }
-
-    /* 底部 */
-    .footer {
-      font-size: 12px;
-      color: #999999;
-    }
-
-    @media (max-width: 480px) {
-      .title h1 {
-        font-size: 30px;
-      }
-      .nav {
-        gap: 16px;
-        font-size: 13px;
-      }
-      .intro {
-        font-size: 13px;
-      }
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <div class="inner">
-      <!-- 主标题区域 -->
-      <div class="title">
-        <h1>MY SPACE</h1>
-        <div class="sub">记录 · 灵感 · 生活切片</div>
-      </div>
 
-      <!-- 导航链接：你可以把 href 换成自己的页面地址 -->
-      <nav class="nav">
-        <a href="/thoughts.html">想法</a>
-        <a href="/music.html">音乐</a>
-        <a href="/photos.html">照片</a>
-      </nav>
+  <!-- 左上角文字 -->
+  <div class="top-left">Bob's</div>
 
-      <!-- 简短说明：不想要可以整段删掉 -->
-      <div class="intro">
-        这里是我的个人小站，用来放一些零散的想法、最近循环的歌，还有偶尔拍到的照片。
-        页面很简单，但对我来说，它是一块安静的、自留的角落。
-      </div>
+  <!-- 中央内容 -->
+  <div class="center">
+    <h1>Bob’s</h1>
 
-      <!-- 底部信息 -->
-      <div class="footer">
-        © <span id="year"></span> 我的自建站 · Powered by GitHub Pages
-      </div>
+    <div class="links">
+      <a href="/thoughts.html"><span class="icon">✨</span> Thoughts</a>
+      <a href="/music.html"><span class="icon">🎵</span> Music</a>
+      <a href="/photos.html"><span class="icon">📷</span> Photos</a>
     </div>
   </div>
 
-  <script>
-    // 自动填充年份
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
+
