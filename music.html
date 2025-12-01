@@ -32,14 +32,12 @@
       z-index: 10;
     }
 
-    /* 内容整体上移 */
     .center-container {
       margin-top: 12vh;
       padding-left: 20vw;
       box-sizing: border-box;
     }
 
-    /* title 与第一段文案的间距 */
     .title {
       font-size: 40px;
       font-weight: 600;
@@ -47,25 +45,115 @@
       text-align: left;
     }
 
-    /* 文案整体块（包含文案与日期） */
+    /* 每条记录整体块 */
     .entry {
       margin-bottom: 2.5em;
     }
 
-    /* 灰色背景仅包文字 */
-    .entry .text {
+    /* 文案（保持原来的灰底样式） */
+    .text {
       background: #f3f3f1;
       padding: 10px 14px;
       display: inline-block;
       border-radius: 3px;
       line-height: 1.7;
+      max-width: 640px;
     }
 
-    /* 日期样式（在文案下方） */
-    .entry .date {
+    /* 迷你播放器卡片 */
+    .player-card {
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid #e4e4df;
+      background: #fbfbf9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 360px;
+      gap: 12px;
+    }
+
+    /* 左侧唱片 + 文案 */
+    .player-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .disc {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid #d0d0cb;
+      box-sizing: border-box;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .disc::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      margin-top: -4px;
+      margin-left: -4px;
+      border-radius: 50%;
+      background: #d0d0cb;
+    }
+
+    .track-meta {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .track-title {
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 230px;
+    }
+
+    .track-sub {
+      font-size: 12px;
+      color: #8a8880;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 230px;
+    }
+
+    /* 播放按钮 */
+    .play-btn {
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #37352f;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .play-btn:hover {
+      opacity: 0.85;
+    }
+
+    audio {
+      display: none; /* 隐藏原生控件 */
+    }
+
+    /* 日期（保持原规则：8px，小字、左对齐） */
+    .date {
       font-size: 8px;
       color: #37352f;
-      padding-left: 14px; /* ⭐ 与文案首字左对齐（因为文案 padding-left = 14px） */
+      padding-left: 14px; /* 与文案首字左对齐 */
       margin-top: 6px;
       display: block;
     }
@@ -73,11 +161,21 @@
     @media (max-width: 768px) {
       .center-container {
         margin-top: 14vh;
-        padding-left: 24px;
+        padding-left: 20px;
         padding-right: 20px;
       }
+
       .title {
         font-size: 32px;
+      }
+
+      .player-card {
+        max-width: 100%;
+      }
+
+      .track-title,
+      .track-sub {
+        max-width: 60vw;
       }
     }
   </style>
@@ -89,13 +187,96 @@
   <div class="center-container">
     <h1 class="title">Music</h1>
 
-    <!-- 文案 1 -->
+    <!-- ★ 示例 1：一条完整记录：文案 + 迷你播放器卡片 + 时间 -->
     <div class="entry">
-      <span class="text">Adele</span>
-      <span class="date">2024-12-03</span>
+      <!-- 文案 -->
+      <span class="text">最近循环的一首歌。</span>
+
+      <!-- 迷你播放器卡片 -->
+      <div class="player-card">
+        <div class="player-left">
+          <div class="disc"></div>
+          <div class="track-meta">
+            <div class="track-title">Adele - Hello</div>
+            <div class="track-sub">from album 25</div>
+          </div>
+        </div>
+        <button class="play-btn" data-audio-id="m1">▶</button>
+      </div>
+
+      <!-- 音频本体 -->
+      <audio id="m1" src="music/adele-hello.mp3"></audio>
+
+      <!-- 时间 -->
+      <span class="date">2024-12-10</span>
     </div>
 
+    <!-- ★ 示例 2 -->
+    <div class="entry">
+      <span class="text">夜里写东西时听这首。</span>
+
+      <div class="player-card">
+        <div class="player-left">
+          <div class="disc"></div>
+          <div class="track-meta">
+            <div class="track-title">Joji - Glimpse of Us</div>
+            <div class="track-sub">soft, a bit sad</div>
+          </div>
+        </div>
+        <button class="play-btn" data-audio-id="m2">▶</button>
+      </div>
+
+      <audio id="m2" src="music/joji-glimpse.mp3"></audio>
+
+      <span class="date">2024-12-10</span>
+    </div>
+
+    <!-- 以后可以继续往下追加 entry ... -->
+
   </div>
+
+  <script>
+    // 简单迷你播放器逻辑：同一时间只播放一首
+    const buttons = document.querySelectorAll('.play-btn');
+    let currentAudio = null;
+    let currentBtn = null;
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const audioId = btn.dataset.audioId;
+        const audio = document.getElementById(audioId);
+
+        // 再次点击当前播放的 → 暂停
+        if (currentAudio === audio && !audio.paused) {
+          audio.pause();
+          btn.textContent = '▶';
+          currentAudio = null;
+          currentBtn = null;
+          return;
+        }
+
+        // 切歌：暂停之前的
+        if (currentAudio && currentAudio !== audio) {
+          currentAudio.pause();
+          if (currentBtn) currentBtn.textContent = '▶';
+        }
+
+        audio.play();
+        btn.textContent = '⏸';
+        currentAudio = audio;
+        currentBtn = btn;
+      });
+    });
+
+    // 播放结束后，按钮恢复
+    document.querySelectorAll('audio').forEach(a => {
+      a.addEventListener('ended', () => {
+        if (currentBtn) currentBtn.textContent = '▶';
+        currentAudio = null;
+        currentBtn = null;
+      });
+    });
+  </script>
 
 </body>
 </html>
