@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>Thoughts - sos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #ffffff;
+      color: #37352f;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+        "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+    }
+
+    /* 顶部面包屑区域 */
+    .header {
+      padding: 24px 40px 0;
+      font-size: 14px;
+      color: #73726c;
+    }
+
+    .breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .breadcrumb-sep {
+      margin: 0 6px;
+    }
+
+    /* 中间主内容：整体居中，宽度较窄 */
+    .main {
+      max-width: 680px;
+      margin: 80px auto 120px; /* 距离顶部的大间距 */
+      text-align: center;
+    }
+
+    /* 顶部小图标（模拟 Notion 的 loading） */
+    .icon {
+      font-size: 26px;
+      margin-bottom: 24px;
+    }
+
+    /* 标题 Thoughts */
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+      margin: 0 0 32px;
+    }
+
+    /* 文本块容器：改为左对齐 */
+    .blocks {
+      text-align: left;
+    }
+
+    .block {
+      background-color: #f3f3f3;
+      padding: 8px 12px;
+      margin: 0 auto 10px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* 让内容宽度不要太宽，更像截图 */
+    .block-inner {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 16px 16px 0;
+      }
+      .main {
+        margin: 60px 16px 80px;
+      }
+      .title {
+        font-size: 26px;
+      }
+      .block {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部面包屑：可以把 sos 换成你想要的名字 -->
+  <header class="header">
+    <div class="breadcrumb">
+      <span>sos</span>
+      <span class="breadcrumb-sep>/</span>
+      <span>✴ Thoughts</span>
+    </div>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="main">
+    <div class="icon">✴</div>
+    <h1 class="title">Thoughts</h1>
+
+    <div class="blocks">
+      <!-- 第一段 -->
+      <div class="block">
+        <div class="block-inner">
+          两个人可以相处很久也不知道该对方叫什么，名字只有第三个人出现时才有需要。
+        </div>
+      </div>
+
+      <!-- 第二段 -->
+      <div class="block">
+        <div class="block-inner">
+          目前的生活状态一直在“沉淀”和“放空”之间徘徊，很奇怪也很矛盾，在这个时代好像无论怎么沉淀都赶不上
+          重新知识增长的速度，好像怎么放空都得不到满足。
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
