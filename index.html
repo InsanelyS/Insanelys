@@ -2,49 +2,148 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>我的第一个自建站</title>
+  <title>我的小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    /* 整体布局：全屏居中 */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
     }
-    .container {
-      max-width: 800px;
-      margin: 60px auto;
-      background: white;
-      padding: 40px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      border-radius: 10px;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB",
+        "Microsoft YaHei", sans-serif;
+      background-color: #ffffff;
+      color: #111111;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    h1 {
+
+    .page {
+      width: 100%;
+      padding: 40px 20px;
+    }
+
+    .inner {
+      max-width: 720px;
+      margin: 0 auto;
       text-align: center;
-      margin-bottom: 20px;
     }
-    p {
+
+    /* 顶部标题区域 */
+    .title {
+      margin-bottom: 32px;
+    }
+
+    .title h1 {
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .title .sub {
+      font-size: 14px;
+      color: #666666;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* 导航 */
+    .nav {
+      display: inline-flex;
+      gap: 24px;
+      margin-bottom: 40px;
+      font-size: 14px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #222222;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background-color: #222222;
+      transition: width 0.2s ease;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    /* 中间一小段介绍文案（可选） */
+    .intro {
+      font-size: 14px;
+      color: #555555;
       line-height: 1.8;
+      max-width: 480px;
+      margin: 0 auto 40px;
     }
+
+    /* 底部 */
     .footer {
-      margin-top: 40px;
-      text-align: center;
       font-size: 12px;
-      color: #888;
+      color: #999999;
+    }
+
+    @media (max-width: 480px) {
+      .title h1 {
+        font-size: 30px;
+      }
+      .nav {
+        gap: 16px;
+        font-size: 13px;
+      }
+      .intro {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>欢迎来到我的 GitHub 自建站</h1>
-    <p>这是我通过 GitHub Pages 搭建的第一个网站 🎉。</p>
-    <p>你现在看到的所有内容，都是写在 <code>index.html</code> 这个文件里的。</p>
-    <p>后续我可以在这里放上：个人介绍、作品集、博客、简历等等。</p>
-    <div class="footer">
-      © <span id="year"></span> 我的自建站
+  <div class="page">
+    <div class="inner">
+      <!-- 主标题区域 -->
+      <div class="title">
+        <h1>MY SPACE</h1>
+        <div class="sub">记录 · 灵感 · 生活切片</div>
+      </div>
+
+      <!-- 导航链接：你可以把 href 换成自己的页面地址 -->
+      <nav class="nav">
+        <a href="/thoughts.html">想法</a>
+        <a href="/music.html">音乐</a>
+        <a href="/photos.html">照片</a>
+      </nav>
+
+      <!-- 简短说明：不想要可以整段删掉 -->
+      <div class="intro">
+        这里是我的个人小站，用来放一些零散的想法、最近循环的歌，还有偶尔拍到的照片。
+        页面很简单，但对我来说，它是一块安静的、自留的角落。
+      </div>
+
+      <!-- 底部信息 -->
+      <div class="footer">
+        © <span id="year"></span> 我的自建站 · Powered by GitHub Pages
+      </div>
     </div>
   </div>
+
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // 自动填充年份
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
