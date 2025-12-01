@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
-  <title>Thoughts - sos</title>
+  <title>Photos - sos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
@@ -20,7 +20,7 @@
       font-size: 16px;
     }
 
-    /* 左上角 sos */
+    /* 左上角 sos（返回首页） */
     .top-title {
       position: fixed;
       top: 16px;
@@ -28,6 +28,7 @@
       font-size: 28px;
       font-weight: 500;
       color: #73726c;
+      text-decoration: none;
       z-index: 10;
     }
 
@@ -38,7 +39,7 @@
       box-sizing: border-box;
     }
 
-    /* title 与第一段文案的间距 = 2.5em */
+    /* title 间距 */
     .title {
       font-size: 40px;
       font-weight: 600;
@@ -46,18 +47,27 @@
       text-align: left;
     }
 
-    /* 文案容器（不带背景） */
-    .paragraph {
-      margin: 0 0 2.5em 0;
+    /* 每条记录的整体容器 */
+    .entry {
+      margin-bottom: 2.5em;
+    }
+
+    /* 灰色背景只包文字 */
+    .entry .text {
+      background: #f3f3f1;
+      padding: 10px 14px;
+      display: inline-block;
+      border-radius: 3px;
       line-height: 1.7;
     }
 
-    /* 灰色背景仅包裹文字 */
-    .paragraph span {
-      background: #f3f3f1;
-      padding: 10px 14px; /* 左右一致 */
-      display: inline-block; /* ✨ 背景只包文字，不会占满整行 */
-      border-radius: 3px;
+    /* 文案下方的小日期 */
+    .entry .date {
+      font-size: 8px;
+      color: #37352f;
+      padding-left: 14px; /* ⭐ 与文案首字左侧对齐 */
+      margin-top: 6px;
+      display: block;
     }
 
     @media (max-width: 768px) {
@@ -78,10 +88,11 @@
   <div class="center-container">
     <h1 class="title">Photos</h1>
 
-    <p class="paragraph">
-      <span>My live</span>
-    </p>
-
+    <!-- 文案 1 -->
+    <div class="entry">
+      <span class="text">My live</span>
+      <span class="date">2024-12-03</span>
+    </div>
 
   </div>
 
