@@ -31,14 +31,14 @@
       z-index: 10;
     }
 
-    /* ⭐ 内容整体位置：向上移动（从原来的 20vh → 12vh） */
+    /* 内容整体上移 */
     .center-container {
       margin-top: 12vh;
       padding-left: 20vw;
       box-sizing: border-box;
     }
 
-    /* ⭐ title 到第一段文案 = 与文案之间相同间距（2.5em） */
+    /* title 与第一段文案的间距 = 2.5em */
     .title {
       font-size: 40px;
       font-weight: 600;
@@ -46,18 +46,18 @@
       text-align: left;
     }
 
-    /* 文案模块 */
+    /* 文案容器（不带背景） */
     .paragraph {
-      max-width: 640px;
-      background: #f3f3f1;
-      padding: 10px 14px;
+      margin: 0 0 2.5em 0;
       line-height: 1.7;
-      margin: 0 0 2.5em 0;  /* 文案之间间距：2.5 倍 */
     }
 
-    /* 最后一个段落不需要额外间距 */
-    .paragraph:last-of-type {
-      margin-bottom: 0;
+    /* 灰色背景仅包裹文字 */
+    .paragraph span {
+      background: #f3f3f1;
+      padding: 10px 14px; /* 左右一致 */
+      display: inline-block; /* ✨ 背景只包文字，不会占满整行 */
+      border-radius: 3px;
     }
 
     @media (max-width: 768px) {
@@ -79,12 +79,13 @@
     <h1 class="title">Thoughts</h1>
 
     <p class="paragraph">
-      两个人可以相处很久也不知道该对方叫什么，名字只有第三个人出现时才有需要。
+      <span>两个人可以相处很久也不知道该对方叫什么，名字只有第三个人出现时才有需要。</span>
     </p>
 
     <p class="paragraph">
-      目前的生活状态一直在“沉淀”和“放空”之间徘徊，很奇怪也很矛盾，在这个时候哪怕怎么沉淀都赶不上重新知识增长的速度，好像怎么放空都得不到满足。
+      <span>目前的生活状态一直在“沉淀”和“放空”之间徘徊，很奇怪也很矛盾，在这个时候哪怕怎么沉淀都赶不上重新知识增长的速度，好像怎么放空都得不到满足。</span>
     </p>
+
   </div>
 
 </body>
