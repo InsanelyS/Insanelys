@@ -162,6 +162,92 @@
     .tk-input-name {
       flex: 1 1 100%;
     }
+
+    /* ------- Twikoo 样式控制 ------- */
+
+/* 整个评论区域不要太宽，和标题区对齐 */
+.twikoo {
+  max-width: 420px;
+}
+
+/* 头像和表单横向太挤就自动换行 */
+.twikoo .tk-submit {
+  display: flex;
+  gap: 10px;
+}
+
+.twikoo .tk-avatar {
+  margin-right: 8px;
+}
+
+/* 只保留昵称这一行输入框：隐藏第 2、3 行（邮箱、网址） */
+.twikoo .tk-meta-input > div:nth-child(2),
+.twikoo .tk-meta-input > div:nth-child(3) {
+  display: none !important;
+}
+
+/* 昵称输入框占满当前区域宽度 */
+.twikoo .tk-meta-input > div:nth-child(1) {
+  width: 100%;
+}
+
+/* 文本框宽度和上面昵称一致，不要通栏 */
+.twikoo .tk-editor {
+  max-width: 420px;
+}
+
+/* 基础美化 */
+#tcomment {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f8f9fb;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.twikoo .tk-input {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  background: #fff;
+}
+
+.twikoo input,
+.twikoo textarea {
+  border-radius: 6px !important;
+  border: 1px solid #ddd !important;
+  padding: 8px 10px !important;
+  font-size: 14px;
+}
+
+.twikoo input:focus,
+.twikoo textarea:focus {
+  outline: none !important;
+  border-color: #4a90e2 !important;
+  box-shadow: 0 0 0 2px rgba(74,144,226,0.15);
+}
+
+/* 单条评论卡片 */
+.twikoo .tk-comment {
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  background: #ffffff;
+  border: 1px solid #eee;
+}
+
+/* ------- 隐藏「预览」和多余图标 ------- */
+
+/* 隐藏预览按钮 */
+.twikoo .tk-preview {
+  display: none !important;
+}
+
+/* 隐藏表情 / 图片等图标（如果你也不想要） */
+.twikoo .tk-extras,
+.twikoo .tk-row.actions .tk-action-icon {
+  display: none !important;
+}
   </style>
 </head>
 <body>
