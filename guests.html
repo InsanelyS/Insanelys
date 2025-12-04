@@ -12,93 +12,20 @@
       height: 100%;
     }
 
-    <style>
-  /* 外层评论区域整体样式 */
-  #tcomment {
-    margin-top: 30px;
-    padding: 20px;
-    border-radius: 12px;
-    background: #f8f9fb;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-  }
-
-  /* 表单区域 */
-  .twikoo .tk-input {
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    padding: 12px;
-    background: #fff;
-  }
-
-  /* 输入框统一风格 */
-  .twikoo input,
-  .twikoo textarea {
-    border-radius: 6px !important;
-    border: 1px solid #ddd !important;
-    padding: 8px 10px !important;
-    font-size: 14px;
-  }
-
-  .twikoo input:focus,
-  .twikoo textarea:focus {
-    outline: none !important;
-    border-color: #4a90e2 !important;
-    box-shadow: 0 0 0 2px rgba(74,144,226,0.15);
-  }
-
-  /* 发布按钮 */
-  .twikoo .tk-send {
-    border-radius: 999px !important;
-    padding: 6px 18px !important;
-    font-size: 14px;
-    border: none !important;
-  }
-
-  /* 单条评论卡片 */
-  .twikoo .tk-comment {
-    border-radius: 10px;
-    padding: 12px 14px;
-    margin: 10px 0;
-    background: #ffffff;
-    border: 1px solid #eee;
-  }
-
-  .twikoo .tk-comment .tk-nick {
-    font-weight: 600;
-  }
-
-  .twikoo .tk-comment .tk-content {
-    margin-top: 4px;
-    line-height: 1.6;
-  }
-
-  /* 隐藏邮箱、网址输入框整行 */
-  .tk-input-email,
-  .tk-input-link {
-    display: none !important;
-  }
-
-  /* 昵称单独一行铺满 */
-  .tk-input-name {
-    flex: 1 1 100%;
-  }
-</style>
-
-  
-    .photo {
-  width: 100%;
-  max-width: 640px; /* 和文字宽度视觉匹配 */
-  display: block;
-  margin-top: 10px;
-  border-radius: 6px; /* 可选，让图片更柔和 */
-}
-
     body {
       background: #ffffff;
       color: #37352f;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
         "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
       font-size: 16px;
+    }
+
+    .photo {
+      width: 100%;
+      max-width: 640px; /* 和文字宽度视觉匹配 */
+      display: block;
+      margin-top: 10px;
+      border-radius: 6px; /* 可选，让图片更柔和 */
     }
 
     /* 左上角 sos（返回首页） */
@@ -161,31 +88,31 @@
         font-size: 32px;
       }
     }
-  </style>
-</head>
-<body>
 
-  <a class="top-title" href="index.html">sos</a>
+    /* -------------------- */
+    /*   Twikoo 样式美化    */
+    /* -------------------- */
 
-  <div class="center-container">
-    <h1 class="title">Guests</h1>
+    /* 外层评论区域整体样式 */
+    #tcomment {
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      background: #f8f9fb;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
 
-<!-- Twikoo 评论区 -->
-<div id="tcomment"></div>
+    /* 表单区域 */
+    .twikoo .tk-input {
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      padding: 12px;
+      background: #fff;
+    }
 
-<!-- Twikoo 前端脚本 -->
-<script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js"></script>
-
-<script>
-  twikoo.init({
-    envId: 'https://bobs-pied.vercel.app',  // ← 就用你的域名，已确认可用
-    el: '#tcomment',
-    lang: 'zh-CN'
-  });
-</script>
-
-
-  </div>
-
-</body>
-</html>
+    /* 输入框统一风格 */
+    .twikoo input,
+    .twikoo textarea {
+      border-radius: 6px !important;
+      border: 1px solid #ddd !important;
+      padding: 8px 10px !important;
