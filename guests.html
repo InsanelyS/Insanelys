@@ -67,134 +67,137 @@
       }
     }
 
-  /* -------------------- */
-/*      Twikoo 极简版     */
-/* -------------------- */
+    /* -------------------- */
+    /*      Twikoo 极简版     */
+    /* -------------------- */
 
-/* 外层容器去背景/边框 */
-#tcomment {
-  margin-top: 20px;
-  padding: 0;
-  background: #fff;
-  border: none;
-  box-shadow: none;
-}
+    /* 外层容器去背景/边框 */
+    #tcomment {
+      margin-top: 20px;
+      padding: 0;
+      background: #fff;
+      border: none;
+      box-shadow: none;
+    }
 
-/* 限制宽度与正文一致 */
-.twikoo {
-  max-width: 420px;
-  color: #000;
-}
+    /* 限制宽度与正文一致 */
+    .twikoo {
+      max-width: 420px;
+      color: #000;
+    }
 
-/* 所有文字黑色 */
-.twikoo, .twikoo * {
-  color: #000 !important;
-}
+    /* 所有文字黑色 */
+    .twikoo,
+    .twikoo * {
+      color: #000 !important;
+    }
 
-/* 隐藏邮箱、网址 */
-.twikoo .tk-meta-input > div:nth-child(2),
-.twikoo .tk-meta-input > div:nth-child(3) {
-  display: none !important;
-}
+    /* 隐藏邮箱、网址 */
+    .twikoo .tk-meta-input > div:nth-child(2),
+    .twikoo .tk-meta-input > div:nth-child(3) {
+      display: none !important;
+    }
 
-/* 随头像一起的输入框容器 */
-.twikoo .tk-submit {
-  display: flex;
-  gap: 12px;
-}
+    /* 随头像一起的输入框容器 */
+    .twikoo .tk-submit {
+      display: flex;
+      gap: 12px;
+    }
 
-/* 去掉多余的外框阴影 */
-.twikoo .tk-input {
-  border: none !important;
-  background: transparent !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-}
+    /* 去掉多余的外框阴影 */
+    .twikoo .tk-input {
+      border: none !important;
+      background: transparent !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+    }
 
-/* 输入框统一黑白简约 */
-.twikoo input,
-.twikoo textarea,
-.twikoo .el-input__inner,
-.twikoo .el-textarea__inner {
-  width: 100%;
-  border: 1px solid #000 !important;
-  border-radius: 4px !important;
-  background: #fff !important;
-  padding: 6px 8px !important;
-  font-size: 14px;
-  box-shadow: none !important;
-}
-.twikoo textarea {
-  min-height: 110px;
-}
+    /* 输入框统一黑白简约 */
+    .twikoo input,
+    .twikoo textarea,
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner {
+      width: 100%;
+      border: 1px solid #000 !important;
+      border-radius: 4px !important;
+      background: #fff !important;
+      padding: 6px 8px !important;
+      font-size: 14px;
+      box-shadow: none !important;
+    }
 
-/* focus 不要蓝边 */
-.twikoo input:focus,
-.twikoo textarea:focus,
-.twikoo .el-input__inner:focus,
-.twikoo .el-textarea__inner:focus {
-  outline: none !important;
-  border-color: #000 !important;
-  box-shadow: none !important;
-}
+    .twikoo textarea {
+      min-height: 110px;
+    }
 
-/* ----------------------- */
-/*   隐藏所有图标按钮         */
-/* ----------------------- */
+    /* focus 不要蓝边 */
+    .twikoo input:focus,
+    .twikoo textarea:focus,
+    .twikoo .el-input__inner:focus,
+    .twikoo .el-textarea__inner:focus {
+      outline: none !important;
+      border-color: #000 !important;
+      box-shadow: none !important;
+    }
 
-.twikoo .tk-extras,                 /* 表情、图片、M+ 一整排 */
-.twikoo .tk-row.actions .tk-action-icon, /* 刷新、设置图标 */
-.twikoo .tk-preview,                /* 预览按钮 */
-.twikoo .tk-powered,                /* Powered by Twikoo */
-.twikoo .tk-status                     /* 顶部状态栏 */
-{
-  display: none !important;
-}
+    /* ----------------------- */
+    /*   隐藏所有图标按钮         */
+    /* ----------------------- */
 
-/* ----------------------- */
-/*   发送按钮靠右对齐         */
-/* ----------------------- */
+    .twikoo .tk-extras,                 /* 表情、图片、M+ 一整排 */
+    .twikoo .tk-row.actions .tk-action-icon, /* 刷新、设置图标 */
+    .twikoo .tk-preview,                /* 预览按钮 */
+    .twikoo .tk-powered,                /* Powered by Twikoo */
+    .twikoo .tk-status                     /* 顶部状态栏 */
+    {
+      display: none !important;
+    }
 
-.twikoo .tk-row.actions {
-  display: flex;
-  justify-content: flex-end;   /* 🔥 发送按钮右对齐 */
-  margin-top: 6px;
-}
+    /* ----------------------- */
+    /*   发送按钮靠右对齐         */
+    /* ----------------------- */
 
-/* 发送按钮黑白极简风 */
-.twikoo .tk-send {
-  border-radius: 999px !important;
-  border: 1px solid #000 !important;
-  background: #fff !important;
-  padding: 4px 14px !important;
-  font-size: 13px !important;
-  color: #000 !important;
-}
-.twikoo .tk-send:hover {
-  background: #000 !important;
-  color: #fff !important;
-}
+    .twikoo .tk-row.actions {
+      display: flex;
+      justify-content: flex-end;   /* 发送按钮右对齐 */
+      margin-top: 6px;
+    }
 
-/* ----------------------- */
-/*   隐藏“没有评论”外框       */
-/* ----------------------- */
+    /* 发送按钮黑白极简风 */
+    .twikoo .tk-send {
+      border-radius: 999px !important;
+      border: 1px solid #000 !important;
+      background: #fff !important;
+      padding: 4px 14px !important;
+      font-size: 13px !important;
+      color: #000 !important;
+    }
 
-.twikoo .tk-comments-container {
-  border: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
-}
+    .twikoo .tk-send:hover {
+      background: #000 !important;
+      color: #fff !important;
+    }
 
-/* 单条评论也做成极简黑白 */
-.twikoo .tk-comment {
-  border: 1px solid #000;
-  padding: 10px 12px;
-  border-radius: 4px;
-  background: #fff;
-  margin: 12px 0;
-}
+    /* ----------------------- */
+    /*   隐藏“没有评论”外框       */
+    /* ----------------------- */
 
-</head>    
+    .twikoo .tk-comments-container {
+      border: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+    }
+
+    /* 单条评论也做成极简黑白 */
+    .twikoo .tk-comment {
+      border: 1px solid #000;
+      padding: 10px 12px;
+      border-radius: 4px;
+      background: #fff;
+      margin: 12px 0;
+    }
+  </style>
+</head>
 <body>
   <a class="top-title" href="index.html">sos</a>
 
