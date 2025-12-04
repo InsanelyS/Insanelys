@@ -89,51 +89,43 @@
       }
     }
 
-    /* -------------------- */
-/*   Twikoo 极简黑白版   */
+/* -------------------- */
+/*      Twikoo 极简版     */
 /* -------------------- */
 
-/* 评论容器本身：去掉大块背景和阴影，只保留和正文对齐 */
+/* 外层容器去背景/边框 */
 #tcomment {
-  margin-top: 24px;
+  margin-top: 20px;
   padding: 0;
-  background: #ffffff;
+  background: #fff;
   border: none;
   box-shadow: none;
 }
 
-/* Twikoo 整体宽度：和你文章区对齐 */
+/* 限制宽度与正文一致 */
 .twikoo {
   max-width: 420px;
   color: #000;
-  font-size: 14px;
 }
 
-/* 统一黑色文字（避免出现蓝色字） */
-.twikoo,
-.twikoo * {
+/* 所有文字黑色 */
+.twikoo, .twikoo * {
   color: #000 !important;
 }
 
-/* 链接也用黑色，下划线区分 */
-.twikoo a {
-  color: #000 !important;
-  text-decoration: underline;
+/* 隐藏邮箱、网址 */
+.twikoo .tk-meta-input > div:nth-child(2),
+.twikoo .tk-meta-input > div:nth-child(3) {
+  display: none !important;
 }
 
-/* 提交区域：左头像 + 右边竖排（昵称 + 文本框 + 按钮） */
+/* 随头像一起的输入框容器 */
 .twikoo .tk-submit {
   display: flex;
-  align-items: flex-start;
   gap: 12px;
 }
 
-/* 头像简单靠上一点，看起来居中 */
-.twikoo .tk-avatar {
-  margin-top: 4px;
-}
-
-/* 内层 input 区容器：去掉那一圈边框/背景，避免双环 */
+/* 去掉多余的外框阴影 */
 .twikoo .tk-input {
   border: none !important;
   background: transparent !important;
@@ -141,34 +133,24 @@
   box-shadow: none !important;
 }
 
-/* 只保留昵称一行，隐藏邮箱/网址 */
-.twikoo .tk-meta-input > div:nth-child(2),
-.twikoo .tk-meta-input > div:nth-child(3) {
-  display: none !important;
-}
-
-/* 昵称输入框占满当前宽度 */
-.twikoo .tk-meta-input > div:nth-child(1) {
-  width: 100%;
-}
-
-/* 输入框 / 文本域：统一一条黑色边框、圆角微小 */
-/* 兼容 Twikoo 内部用的 ElementUI 类名 */
+/* 输入框统一黑白简约 */
 .twikoo input,
 .twikoo textarea,
 .twikoo .el-input__inner,
 .twikoo .el-textarea__inner {
   width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #000 !important;    /* 🔹只留一圈黑色边框 */
+  border: 1px solid #000 !important;
   border-radius: 4px !important;
-  background: #ffffff !important;
+  background: #fff !important;
   padding: 6px 8px !important;
   font-size: 14px;
   box-shadow: none !important;
 }
+.twikoo textarea {
+  min-height: 110px;
+}
 
-/* focus 状态：不要蓝光，只保持黑色边框即可 */
+/* focus 不要蓝边 */
 .twikoo input:focus,
 .twikoo textarea:focus,
 .twikoo .el-input__inner:focus,
@@ -178,60 +160,62 @@
   box-shadow: none !important;
 }
 
-/* 文本编辑区：和昵称同宽，稍微拉开一点距离 */
-.twikoo .tk-editor {
-  margin-top: 8px;
-}
+/* ----------------------- */
+/*   隐藏所有图标按钮         */
+/* ----------------------- */
 
-/* 底部操作行：只在右侧放计数+发送按钮 */
-.twikoo .tk-row.actions {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 8px;
-}
-
-/* 隐藏预览按钮、表情、图片等图标 */
-.twikoo .tk-preview,
-.twikoo .tk-extras,
-.twikoo .tk-row.actions .tk-action-icon {
+.twikoo .tk-extras,                 /* 表情、图片、M+ 一整排 */
+.twikoo .tk-row.actions .tk-action-icon, /* 刷新、设置图标 */
+.twikoo .tk-preview,                /* 预览按钮 */
+.twikoo .tk-powered,                /* Powered by Twikoo */
+.twikoo .tk-status                     /* 顶部状态栏 */
+{
   display: none !important;
 }
 
-/* 发送按钮：黑白极简 */
+/* ----------------------- */
+/*   发送按钮靠右对齐         */
+/* ----------------------- */
+
+.twikoo .tk-row.actions {
+  display: flex;
+  justify-content: flex-end;   /* 🔥 发送按钮右对齐 */
+  margin-top: 6px;
+}
+
+/* 发送按钮黑白极简风 */
 .twikoo .tk-send {
   border-radius: 999px !important;
   border: 1px solid #000 !important;
-  background: #ffffff !important;
-  color: #000 !important;
+  background: #fff !important;
   padding: 4px 14px !important;
   font-size: 13px !important;
-  box-shadow: none !important;
+  color: #000 !important;
 }
-
-/* Hover 时简单黑底白字反转一下就够了 */
 .twikoo .tk-send:hover {
-  background: #000000 !important;
-  color: #ffffff !important;
+  background: #000 !important;
+  color: #fff !important;
 }
 
-/* 单条评论卡片：也统一成黑白单线条风格 */
+/* ----------------------- */
+/*   隐藏“没有评论”外框       */
+/* ----------------------- */
+
+.twikoo .tk-comments-container {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* 单条评论也做成极简黑白 */
 .twikoo .tk-comment {
-  border-radius: 4px;
-  padding: 10px 12px;
-  margin: 8px 0;
-  background: #ffffff;
   border: 1px solid #000;
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: #fff;
+  margin: 12px 0;
 }
 
-.twikoo .tk-comment .tk-nick {
-  font-weight: 600;
-}
-
-.twikoo .tk-comment .tk-time {
-  font-size: 12px;
-  opacity: 0.6;
-}
 
   </style>
 </head>
