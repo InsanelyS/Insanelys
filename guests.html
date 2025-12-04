@@ -116,3 +116,74 @@
       border-radius: 6px !important;
       border: 1px solid #ddd !important;
       padding: 8px 10px !important;
+      font-size: 14px;
+    }
+
+    .twikoo input:focus,
+    .twikoo textarea:focus {
+      outline: none !important;
+      border-color: #4a90e2 !important;
+      box-shadow: 0 0 0 2px rgba(74,144,226,0.15);
+    }
+
+    /* 发布按钮 */
+    .twikoo .tk-send {
+      border-radius: 999px !important;
+      padding: 6px 18px !important;
+      font-size: 14px;
+      border: none !important;
+    }
+
+    /* 单条评论卡片 */
+    .twikoo .tk-comment {
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      background: #ffffff;
+      border: 1px solid #eee;
+    }
+
+    .twikoo .tk-comment .tk-nick {
+      font-weight: 600;
+    }
+
+    .twikoo .tk-comment .tk-content {
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+
+    /* 隐藏邮箱、网址输入框整行 */
+    .tk-input-email,
+    .tk-input-link {
+      display: none !important;
+    }
+
+    /* 昵称单独一行铺满 */
+    .tk-input-name {
+      flex: 1 1 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="top-title" href="index.html">sos</a>
+
+  <div class="center-container">
+    <h1 class="title">Guests</h1>
+
+    <!-- Twikoo 评论区 -->
+    <div id="tcomment"></div>
+
+    <!-- Twikoo 前端脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js"></script>
+    <script>
+      twikoo.init({
+        envId: 'https://bobs-pied.vercel.app',  // 你的 Twikoo 后端域名
+        el: '#tcomment',
+        lang: 'zh-CN'
+      });
+    </script>
+  </div>
+
+</body>
+</html>
