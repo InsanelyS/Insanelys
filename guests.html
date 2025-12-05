@@ -144,14 +144,16 @@
     /*   隐藏所有图标按钮         */
     /* ----------------------- */
 
-    .twikoo .tk-extras,                 /* 表情、图片、M+ 一整排 */
-    .twikoo .tk-row.actions .tk-action-icon, /* 刷新、设置图标 */
-    .twikoo .tk-preview,                /* 预览按钮 */
-    .twikoo .tk-powered,                /* Powered by Twikoo */
-    .twikoo .tk-status                     /* 顶部状态栏 */
-    {
-      display: none !important;
-    }
+/* 隐藏图标，但不影响发送按钮 */
+.twikoo .tk-extras,                 /* 表情、图片、M+ 一整排 */
+.twikoo .tk-action-icon,            /* 刷新、设置图标 */
+.twikoo .tk-preview,                /* 预览按钮 */
+.twikoo .tk-powered,                /* Powered by Twikoo */
+.twikoo .tk-status                  /* 顶部状态栏 */
+{
+  display: none !important;
+}
+
 
     /* ----------------------- */
     /*   发送按钮靠右对齐         */
