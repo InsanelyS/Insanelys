@@ -92,7 +92,7 @@
     color: #000 !important;
   }
 
-  /* 只隐藏网址（第三个） */
+  /* 只隐藏网址（第三个 meta 输入） */
   .twikoo .tk-meta-input > div:nth-child(3) {
     display: none !important;
   }
@@ -109,6 +109,7 @@
     background: transparent !important;
     padding: 0 !important;
     box-shadow: none !important;
+    margin-left: 0 !important;     /* 清理默认缩进 */
   }
 
   /* 输入框统一黑白简约 */
@@ -140,7 +141,7 @@
   }
 
   /* ----------------------- */
-  /*   隐藏所有图标按钮         */
+  /*   隐藏多余图标按钮         */
   /* ----------------------- */
 
   /* 隐藏表情 / 图片 / 预览等图标，但不要隐藏状态栏 */
@@ -151,7 +152,7 @@
     display: none !important;
   }
 
-  /* 状态栏保持可见 */
+  /* 状态栏保持可见，方便看到错误提示 */
   .twikoo .tk-status {
     display: block !important;
   }
@@ -191,27 +192,29 @@
     background: transparent !important;
   }
 
-  /* 单条评论：只右侧昵称+评论有边框，宽度与上方输入框一致 */
+  /* 单条评论样式：头像在左，右侧昵称+评论带边框 */
   .twikoo .tk-comment {
     display: flex;          /* 头像 + 右侧内容并排 */
     gap: 12px;
     margin: 12px 0;
     border: none !important;
     background: transparent !important;
-    padding: 0;             /* 去掉外围 padding，由右侧盒子自己控制 */
+    padding: 0;             /* 去掉外围 padding */
   }
 
+  /* 右侧内容盒子，与上面的输入框左边对齐 */
   .twikoo .tk-comment .tk-main {
-    flex: 1;                                   /* 宽度自适应，和上方输入框对齐 */
+    flex: 1;
     border: 1px solid #000;
     border-radius: 4px;
     background: #fff;
     padding: 10px 12px;
     box-sizing: border-box;
-    font-size: 14px;                           /* 与输入框字体一致 */
+    font-size: 14px;            /* 与上方输入框一致 */
+    margin-left: 0 !important;  /* 关键：去掉默认左缩进 */
   }
 
-  /* 评论正文、昵称等也保持 14px */
+  /* 右侧内部文字统一 14px */
   .twikoo .tk-comment .tk-main *,
   .twikoo .tk-comment .tk-main .tk-content {
     font-size: 14px !important;
